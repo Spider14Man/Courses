@@ -1,0 +1,18 @@
+
+const {body}=require('express-validator');
+
+  const validation=()=> {  
+    return [   
+        body('title')
+        .notEmpty()
+        .withMessage("ERROR")
+        .isLength({min:2})
+        .withMessage("ERROR WITH LENGTH"),
+            body('price')
+        .notEmpty()
+        .withMessage("ERROR with empty")
+        // .isLength({min:2})
+        // .withMessage("ERROR WITH LENGTH"),
+]
+}
+module.exports={validation}
